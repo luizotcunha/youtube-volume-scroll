@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Volume Scroll",
+  "version": "1.0",
+  "description": "Change video volume with your mouse scroll! 🎧",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "permissions": ["scripting"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["dist/content.js"],
+      "css": ["src/style.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "dist/background.js"
+  }
+}
